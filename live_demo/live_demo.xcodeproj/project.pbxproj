@@ -1,0 +1,956 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		038E03D3204459A000D59309 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E03D2204459A000D59309 /* AppDelegate.m */; };
+		038E03D6204459A000D59309 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E03D5204459A000D59309 /* RootViewController.m */; };
+		038E03D9204459A000D59309 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038E03D7204459A000D59309 /* Main.storyboard */; };
+		038E03DB204459A000D59309 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 038E03DA204459A000D59309 /* Assets.xcassets */; };
+		038E03DE204459A000D59309 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038E03DC204459A000D59309 /* LaunchScreen.storyboard */; };
+		038E03E1204459A000D59309 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E03E0204459A000D59309 /* main.m */; };
+		038E03EE20445EAB00D59309 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E03ED20445EAB00D59309 /* PushViewController.m */; };
+		038E03F120445EB400D59309 /* PullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E03F020445EB400D59309 /* PullViewController.m */; };
+		038E04562044F3ED00D59309 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04552044F3EA00D59309 /* libz.tbd */; };
+		038E04582044F3F500D59309 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04572044F3F500D59309 /* libc++.tbd */; };
+		038E045A2044F40000D59309 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04592044F40000D59309 /* libicucore.tbd */; };
+		038E045C2044F40B00D59309 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E045B2044F40B00D59309 /* libsqlite3.tbd */; };
+		038E045E2044F41800D59309 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E045D2044F41600D59309 /* SystemConfiguration.framework */; };
+		038E04602044F42500D59309 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E045F2044F42000D59309 /* MobileCoreServices.framework */; };
+		038E04622044F42B00D59309 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04612044F42A00D59309 /* CoreTelephony.framework */; };
+		038E04642044F43900D59309 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04632044F43300D59309 /* CoreLocation.framework */; };
+		038E047A204509F300D59309 /* HyphenateLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E0479204509F300D59309 /* HyphenateLite.framework */; };
+		038E047B204509F300D59309 /* HyphenateLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 038E0479204509F300D59309 /* HyphenateLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		038E04B720458A2900D59309 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E049A20458A1600D59309 /* AVOSCloud.framework */; };
+		038E04B820458A2900D59309 /* AVOSCloud.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 038E049A20458A1600D59309 /* AVOSCloud.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		038E04BD20458A4800D59309 /* PLMediaStreamingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04BB20458A4700D59309 /* PLMediaStreamingKit.framework */; };
+		038E04BE20458A4800D59309 /* PLMediaStreamingKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04BB20458A4700D59309 /* PLMediaStreamingKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		038E04BF20458A4800D59309 /* HappyDNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04BC20458A4700D59309 /* HappyDNS.framework */; };
+		038E04C020458A4800D59309 /* HappyDNS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04BC20458A4700D59309 /* HappyDNS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		038E04C220458A8C00D59309 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04C120458A8C00D59309 /* UIKit.framework */; };
+		038E04C420458A9400D59309 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04C320458A9300D59309 /* AVFoundation.framework */; };
+		038E04C620458A9B00D59309 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04C520458A9B00D59309 /* CoreGraphics.framework */; };
+		038E04C820458AA300D59309 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04C720458AA300D59309 /* CFNetwork.framework */; };
+		038E04CA20458AAA00D59309 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04C920458AAA00D59309 /* CoreMedia.framework */; };
+		038E04CC20458AB100D59309 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04CB20458AB100D59309 /* AudioToolbox.framework */; };
+		038E04CE20458ABF00D59309 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04CD20458ABF00D59309 /* libresolv.tbd */; };
+		038E04D22045A73800D59309 /* PLPlayerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04D12045A73700D59309 /* PLPlayerKit.framework */; };
+		038E04D32045A73800D59309 /* PLPlayerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 038E04D12045A73700D59309 /* PLPlayerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		038E05042045A7FA00D59309 /* QNAssessment.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04D92045A7FA00D59309 /* QNAssessment.m */; };
+		038E05052045A7FA00D59309 /* QNIpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04DB2045A7FA00D59309 /* QNIpModel.m */; };
+		038E05062045A7FA00D59309 /* QNDnsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04DE2045A7FA00D59309 /* QNDnsManager.m */; };
+		038E05072045A7FA00D59309 /* QNDomain.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04E02045A7FA00D59309 /* QNDomain.m */; };
+		038E05082045A7FA00D59309 /* QNLruCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04E22045A7FA00D59309 /* QNLruCache.m */; };
+		038E05092045A7FA00D59309 /* QNNetworkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04E42045A7FA00D59309 /* QNNetworkInfo.m */; };
+		038E050A2045A7FA00D59309 /* QNRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04E62045A7FA00D59309 /* QNRecord.m */; };
+		038E050B2045A7FA00D59309 /* QNDnspodEnterprise.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04EB2045A7FA00D59309 /* QNDnspodEnterprise.m */; };
+		038E050C2045A7FA00D59309 /* QNDnspodFree.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04ED2045A7FA00D59309 /* QNDnspodFree.m */; };
+		038E050D2045A7FA00D59309 /* QNHijackingDetectWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04F02045A7FA00D59309 /* QNHijackingDetectWrapper.m */; };
+		038E050E2045A7FA00D59309 /* QNHosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04F22045A7FA00D59309 /* QNHosts.m */; };
+		038E050F2045A7FA00D59309 /* QNResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04F42045A7FA00D59309 /* QNResolver.m */; };
+		038E05102045A7FA00D59309 /* QNResolvUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04F62045A7FA00D59309 /* QNResolvUtil.m */; };
+		038E05112045A7FA00D59309 /* QNTxtResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04F82045A7FA00D59309 /* QNTxtResolver.m */; };
+		038E05122045A7FA00D59309 /* QNRefresher.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04FA2045A7FA00D59309 /* QNRefresher.m */; };
+		038E05132045A7FA00D59309 /* QNDes.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04FD2045A7FA00D59309 /* QNDes.m */; };
+		038E05142045A7FA00D59309 /* QNGetAddrInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E04FF2045A7FA00D59309 /* QNGetAddrInfo.m */; };
+		038E05152045A7FA00D59309 /* QNHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E05012045A7FA00D59309 /* QNHex.m */; };
+		038E05162045A7FA00D59309 /* QNIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E05032045A7FA00D59309 /* QNIP.m */; };
+		038E05182045A82600D59309 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E05172045A82600D59309 /* libbz2.tbd */; };
+		038E051A2045A83C00D59309 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E05192045A83C00D59309 /* AVKit.framework */; };
+		038E051C2045A84D00D59309 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E051B2045A84D00D59309 /* VideoToolbox.framework */; };
+		038E051E2045A85F00D59309 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E051D2045A85F00D59309 /* CoreVideo.framework */; };
+		038E05202045A87100D59309 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E051F2045A87100D59309 /* OpenGLES.framework */; };
+		038E05222045A88100D59309 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E05212045A88100D59309 /* QuartzCore.framework */; };
+		038E05242045A88A00D59309 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E05232045A88900D59309 /* Accelerate.framework */; };
+		038E05262045A8F800D59309 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E05252045A8F700D59309 /* CoreAudio.framework */; };
+		038E05282045A90100D59309 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E05272045A90100D59309 /* MediaPlayer.framework */; };
+		038E052A2045A91400D59309 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E05292045A91400D59309 /* libiconv.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		038E049920458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419861A5A791300C5C6C4;
+			remoteInfo = "AVOSCloud-iOS";
+		};
+		038E049B20458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419911A5A791300C5C6C4;
+			remoteInfo = "AVOSCloud-iOSTests";
+		};
+		038E049D20458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 70CA7F681BDE2DC3000A3B21;
+			remoteInfo = "AVOSCloud-macOS";
+		};
+		038E049F20458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 70F315321BDE503B00D691B3;
+			remoteInfo = "AVOSCloud-macOSTests";
+		};
+		038E04A120458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83D8CF551C17DAF50094279D;
+			remoteInfo = "AVOSCloud-tvOS";
+		};
+		038E04A320458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8320F95C1C1918C60024B45E;
+			remoteInfo = "AVOSCloud-watchOS";
+		};
+		038E04A520458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419C31A5A796000C5C6C4;
+			remoteInfo = "AVOSCloudIM-iOS";
+		};
+		038E04A720458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C8419CD1A5A796000C5C6C4;
+			remoteInfo = "AVOSCloudIM-iOSTests";
+		};
+		038E04A920458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 704F3B6E1BE0D0180033245C;
+			remoteInfo = "AVOSCloudIM-macOS";
+		};
+		038E04AB20458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 704F3B771BE0D0180033245C;
+			remoteInfo = "AVOSCloudIM-macOSTests";
+		};
+		038E04AD20458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83B0E5911F2839FB00EE1A75;
+			remoteInfo = AVOSCloudIMGroupChat;
+		};
+		038E04AF20458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 838CE31B1EC97E6E00B24F5B;
+			remoteInfo = "AVOSCloudLiveQuery-iOS";
+		};
+		038E04B120458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 838CE3231EC97E6E00B24F5B;
+			remoteInfo = "AVOSCloudLiveQuery-iOSTests";
+		};
+		038E04B320458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 838CE3401EC980DE00B24F5B;
+			remoteInfo = "AVOSCloudLiveQuery-macOS";
+		};
+		038E04B520458A1600D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 838CE34D1EC980E000B24F5B;
+			remoteInfo = "AVOSCloudLiveQuery-macOSTests";
+		};
+		038E04B920458A2900D59309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8C8419851A5A791300C5C6C4;
+			remoteInfo = "AVOSCloud-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		038E047C204509F300D59309 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				038E047B204509F300D59309 /* HyphenateLite.framework in Embed Frameworks */,
+				038E04D32045A73800D59309 /* PLPlayerKit.framework in Embed Frameworks */,
+				038E04C020458A4800D59309 /* HappyDNS.framework in Embed Frameworks */,
+				038E04BE20458A4800D59309 /* PLMediaStreamingKit.framework in Embed Frameworks */,
+				038E04B820458A2900D59309 /* AVOSCloud.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		038E03CE204459A000D59309 /* live_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = live_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		038E03D1204459A000D59309 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		038E03D2204459A000D59309 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		038E03D4204459A000D59309 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		038E03D5204459A000D59309 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		038E03D8204459A000D59309 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		038E03DA204459A000D59309 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		038E03DD204459A000D59309 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		038E03DF204459A000D59309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		038E03E0204459A000D59309 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		038E03EC20445EAB00D59309 /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
+		038E03ED20445EAB00D59309 /* PushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
+		038E03EF20445EB400D59309 /* PullViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullViewController.h; sourceTree = "<group>"; };
+		038E03F020445EB400D59309 /* PullViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullViewController.m; sourceTree = "<group>"; };
+		038E04552044F3EA00D59309 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		038E04572044F3F500D59309 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		038E04592044F40000D59309 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		038E045B2044F40B00D59309 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		038E045D2044F41600D59309 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		038E045F2044F42000D59309 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		038E04612044F42A00D59309 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		038E04632044F43300D59309 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		038E0479204509F300D59309 /* HyphenateLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HyphenateLite.framework; path = Librarys/HyphenateLite.framework; sourceTree = "<group>"; };
+		038E048120450C2500D59309 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		038E048220450D9100D59309 /* Preset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Preset.h; sourceTree = "<group>"; };
+		038E0484204589D500D59309 /* AVOSCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		038E048720458A1500D59309 /* AVOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AVOS.xcodeproj; path = "../leancloud-objc-sdk-c71d859/AVOS/AVOS.xcodeproj"; sourceTree = "<group>"; };
+		038E04BB20458A4700D59309 /* PLMediaStreamingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PLMediaStreamingKit.framework; path = Librarys/PLMediaStreamingKit.framework; sourceTree = "<group>"; };
+		038E04BC20458A4700D59309 /* HappyDNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HappyDNS.framework; path = Librarys/HappyDNS.framework; sourceTree = "<group>"; };
+		038E04C120458A8C00D59309 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		038E04C320458A9300D59309 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		038E04C520458A9B00D59309 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		038E04C720458AA300D59309 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		038E04C920458AAA00D59309 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		038E04CB20458AB100D59309 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		038E04CD20458ABF00D59309 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		038E04D12045A73700D59309 /* PLPlayerKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PLPlayerKit.framework; path = Librarys/PLPlayerKit.framework; sourceTree = "<group>"; };
+		038E04D82045A7FA00D59309 /* QNAssessment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNAssessment.h; sourceTree = "<group>"; };
+		038E04D92045A7FA00D59309 /* QNAssessment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNAssessment.m; sourceTree = "<group>"; };
+		038E04DA2045A7FA00D59309 /* QNIpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNIpModel.h; sourceTree = "<group>"; };
+		038E04DB2045A7FA00D59309 /* QNIpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNIpModel.m; sourceTree = "<group>"; };
+		038E04DD2045A7FA00D59309 /* QNDnsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDnsManager.h; sourceTree = "<group>"; };
+		038E04DE2045A7FA00D59309 /* QNDnsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNDnsManager.m; sourceTree = "<group>"; };
+		038E04DF2045A7FA00D59309 /* QNDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDomain.h; sourceTree = "<group>"; };
+		038E04E02045A7FA00D59309 /* QNDomain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNDomain.m; sourceTree = "<group>"; };
+		038E04E12045A7FA00D59309 /* QNLruCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNLruCache.h; sourceTree = "<group>"; };
+		038E04E22045A7FA00D59309 /* QNLruCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNLruCache.m; sourceTree = "<group>"; };
+		038E04E32045A7FA00D59309 /* QNNetworkInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNNetworkInfo.h; sourceTree = "<group>"; };
+		038E04E42045A7FA00D59309 /* QNNetworkInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNNetworkInfo.m; sourceTree = "<group>"; };
+		038E04E52045A7FA00D59309 /* QNRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNRecord.h; sourceTree = "<group>"; };
+		038E04E62045A7FA00D59309 /* QNRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNRecord.m; sourceTree = "<group>"; };
+		038E04E72045A7FA00D59309 /* QNResolverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNResolverDelegate.h; sourceTree = "<group>"; };
+		038E04E82045A7FA00D59309 /* HappyDNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HappyDNS.h; sourceTree = "<group>"; };
+		038E04EA2045A7FA00D59309 /* QNDnspodEnterprise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDnspodEnterprise.h; sourceTree = "<group>"; };
+		038E04EB2045A7FA00D59309 /* QNDnspodEnterprise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNDnspodEnterprise.m; sourceTree = "<group>"; };
+		038E04EC2045A7FA00D59309 /* QNDnspodFree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDnspodFree.h; sourceTree = "<group>"; };
+		038E04ED2045A7FA00D59309 /* QNDnspodFree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNDnspodFree.m; sourceTree = "<group>"; };
+		038E04EF2045A7FA00D59309 /* QNHijackingDetectWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNHijackingDetectWrapper.h; sourceTree = "<group>"; };
+		038E04F02045A7FA00D59309 /* QNHijackingDetectWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNHijackingDetectWrapper.m; sourceTree = "<group>"; };
+		038E04F12045A7FA00D59309 /* QNHosts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNHosts.h; sourceTree = "<group>"; };
+		038E04F22045A7FA00D59309 /* QNHosts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNHosts.m; sourceTree = "<group>"; };
+		038E04F32045A7FA00D59309 /* QNResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNResolver.h; sourceTree = "<group>"; };
+		038E04F42045A7FA00D59309 /* QNResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNResolver.m; sourceTree = "<group>"; };
+		038E04F52045A7FA00D59309 /* QNResolvUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNResolvUtil.h; sourceTree = "<group>"; };
+		038E04F62045A7FA00D59309 /* QNResolvUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNResolvUtil.m; sourceTree = "<group>"; };
+		038E04F72045A7FA00D59309 /* QNTxtResolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNTxtResolver.h; sourceTree = "<group>"; };
+		038E04F82045A7FA00D59309 /* QNTxtResolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNTxtResolver.m; sourceTree = "<group>"; };
+		038E04F92045A7FA00D59309 /* QNRefresher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNRefresher.h; sourceTree = "<group>"; };
+		038E04FA2045A7FA00D59309 /* QNRefresher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNRefresher.m; sourceTree = "<group>"; };
+		038E04FC2045A7FA00D59309 /* QNDes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNDes.h; sourceTree = "<group>"; };
+		038E04FD2045A7FA00D59309 /* QNDes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNDes.m; sourceTree = "<group>"; };
+		038E04FE2045A7FA00D59309 /* QNGetAddrInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNGetAddrInfo.h; sourceTree = "<group>"; };
+		038E04FF2045A7FA00D59309 /* QNGetAddrInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNGetAddrInfo.m; sourceTree = "<group>"; };
+		038E05002045A7FA00D59309 /* QNHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNHex.h; sourceTree = "<group>"; };
+		038E05012045A7FA00D59309 /* QNHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNHex.m; sourceTree = "<group>"; };
+		038E05022045A7FA00D59309 /* QNIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNIP.h; sourceTree = "<group>"; };
+		038E05032045A7FA00D59309 /* QNIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNIP.m; sourceTree = "<group>"; };
+		038E05172045A82600D59309 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		038E05192045A83C00D59309 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		038E051B2045A84D00D59309 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		038E051D2045A85F00D59309 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		038E051F2045A87100D59309 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		038E05212045A88100D59309 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		038E05232045A88900D59309 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		038E05252045A8F700D59309 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		038E05272045A90100D59309 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		038E05292045A91400D59309 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		038E03CB204459A000D59309 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				038E052A2045A91400D59309 /* libiconv.tbd in Frameworks */,
+				038E05282045A90100D59309 /* MediaPlayer.framework in Frameworks */,
+				038E05262045A8F800D59309 /* CoreAudio.framework in Frameworks */,
+				038E05242045A88A00D59309 /* Accelerate.framework in Frameworks */,
+				038E05222045A88100D59309 /* QuartzCore.framework in Frameworks */,
+				038E05202045A87100D59309 /* OpenGLES.framework in Frameworks */,
+				038E051E2045A85F00D59309 /* CoreVideo.framework in Frameworks */,
+				038E051C2045A84D00D59309 /* VideoToolbox.framework in Frameworks */,
+				038E051A2045A83C00D59309 /* AVKit.framework in Frameworks */,
+				038E05182045A82600D59309 /* libbz2.tbd in Frameworks */,
+				038E04CE20458ABF00D59309 /* libresolv.tbd in Frameworks */,
+				038E04CC20458AB100D59309 /* AudioToolbox.framework in Frameworks */,
+				038E04CA20458AAA00D59309 /* CoreMedia.framework in Frameworks */,
+				038E04C820458AA300D59309 /* CFNetwork.framework in Frameworks */,
+				038E04C620458A9B00D59309 /* CoreGraphics.framework in Frameworks */,
+				038E04C420458A9400D59309 /* AVFoundation.framework in Frameworks */,
+				038E04D22045A73800D59309 /* PLPlayerKit.framework in Frameworks */,
+				038E04C220458A8C00D59309 /* UIKit.framework in Frameworks */,
+				038E047A204509F300D59309 /* HyphenateLite.framework in Frameworks */,
+				038E04BF20458A4800D59309 /* HappyDNS.framework in Frameworks */,
+				038E04642044F43900D59309 /* CoreLocation.framework in Frameworks */,
+				038E04622044F42B00D59309 /* CoreTelephony.framework in Frameworks */,
+				038E04BD20458A4800D59309 /* PLMediaStreamingKit.framework in Frameworks */,
+				038E04602044F42500D59309 /* MobileCoreServices.framework in Frameworks */,
+				038E045E2044F41800D59309 /* SystemConfiguration.framework in Frameworks */,
+				038E045C2044F40B00D59309 /* libsqlite3.tbd in Frameworks */,
+				038E045A2044F40000D59309 /* libicucore.tbd in Frameworks */,
+				038E04582044F3F500D59309 /* libc++.tbd in Frameworks */,
+				038E04562044F3ED00D59309 /* libz.tbd in Frameworks */,
+				038E04B720458A2900D59309 /* AVOSCloud.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		038E03C5204459A000D59309 = {
+			isa = PBXGroup;
+			children = (
+				038E04D62045A7FA00D59309 /* HappyDNS */,
+				038E04D12045A73700D59309 /* PLPlayerKit.framework */,
+				038E04BC20458A4700D59309 /* HappyDNS.framework */,
+				038E04BB20458A4700D59309 /* PLMediaStreamingKit.framework */,
+				038E0484204589D500D59309 /* AVOSCloud.framework */,
+				038E0479204509F300D59309 /* HyphenateLite.framework */,
+				038E048720458A1500D59309 /* AVOS.xcodeproj */,
+				038E03D0204459A000D59309 /* live_demo */,
+				038E03CF204459A000D59309 /* Products */,
+				038E04532044F3B200D59309 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		038E03CF204459A000D59309 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				038E03CE204459A000D59309 /* live_demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		038E03D0204459A000D59309 /* live_demo */ = {
+			isa = PBXGroup;
+			children = (
+				038E03E820445E3100D59309 /* Pull */,
+				038E03E720445E0F00D59309 /* Push */,
+				038E03D1204459A000D59309 /* AppDelegate.h */,
+				038E03D2204459A000D59309 /* AppDelegate.m */,
+				038E03D4204459A000D59309 /* RootViewController.h */,
+				038E03D5204459A000D59309 /* RootViewController.m */,
+				038E03D7204459A000D59309 /* Main.storyboard */,
+				038E03DA204459A000D59309 /* Assets.xcassets */,
+				038E03DC204459A000D59309 /* LaunchScreen.storyboard */,
+				038E03DF204459A000D59309 /* Info.plist */,
+				038E03E0204459A000D59309 /* main.m */,
+				038E048120450C2500D59309 /* Config.h */,
+				038E048220450D9100D59309 /* Preset.h */,
+			);
+			path = live_demo;
+			sourceTree = "<group>";
+		};
+		038E03E720445E0F00D59309 /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				038E03EC20445EAB00D59309 /* PushViewController.h */,
+				038E03ED20445EAB00D59309 /* PushViewController.m */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
+		038E03E820445E3100D59309 /* Pull */ = {
+			isa = PBXGroup;
+			children = (
+				038E03EF20445EB400D59309 /* PullViewController.h */,
+				038E03F020445EB400D59309 /* PullViewController.m */,
+			);
+			path = Pull;
+			sourceTree = "<group>";
+		};
+		038E04532044F3B200D59309 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				038E05292045A91400D59309 /* libiconv.tbd */,
+				038E05272045A90100D59309 /* MediaPlayer.framework */,
+				038E05252045A8F700D59309 /* CoreAudio.framework */,
+				038E05232045A88900D59309 /* Accelerate.framework */,
+				038E05212045A88100D59309 /* QuartzCore.framework */,
+				038E051F2045A87100D59309 /* OpenGLES.framework */,
+				038E051D2045A85F00D59309 /* CoreVideo.framework */,
+				038E051B2045A84D00D59309 /* VideoToolbox.framework */,
+				038E05192045A83C00D59309 /* AVKit.framework */,
+				038E05172045A82600D59309 /* libbz2.tbd */,
+				038E04CD20458ABF00D59309 /* libresolv.tbd */,
+				038E04CB20458AB100D59309 /* AudioToolbox.framework */,
+				038E04C920458AAA00D59309 /* CoreMedia.framework */,
+				038E04C720458AA300D59309 /* CFNetwork.framework */,
+				038E04C520458A9B00D59309 /* CoreGraphics.framework */,
+				038E04C320458A9300D59309 /* AVFoundation.framework */,
+				038E04C120458A8C00D59309 /* UIKit.framework */,
+				038E04632044F43300D59309 /* CoreLocation.framework */,
+				038E04612044F42A00D59309 /* CoreTelephony.framework */,
+				038E045F2044F42000D59309 /* MobileCoreServices.framework */,
+				038E045D2044F41600D59309 /* SystemConfiguration.framework */,
+				038E045B2044F40B00D59309 /* libsqlite3.tbd */,
+				038E04592044F40000D59309 /* libicucore.tbd */,
+				038E04572044F3F500D59309 /* libc++.tbd */,
+				038E04552044F3EA00D59309 /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		038E048820458A1500D59309 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				038E049A20458A1600D59309 /* AVOSCloud.framework */,
+				038E049C20458A1600D59309 /* AVOSCloud-iOSTests.xctest */,
+				038E049E20458A1600D59309 /* AVOSCloud.framework */,
+				038E04A020458A1600D59309 /* AVOSCloud-macOSTests.xctest */,
+				038E04A220458A1600D59309 /* AVOSCloud.framework */,
+				038E04A420458A1600D59309 /* AVOSCloud.framework */,
+				038E04A620458A1600D59309 /* AVOSCloudIM.framework */,
+				038E04A820458A1600D59309 /* AVOSCloudIM-iOSTests.xctest */,
+				038E04AA20458A1600D59309 /* AVOSCloudIM.framework */,
+				038E04AC20458A1600D59309 /* AVOSCloudIM-macOSTests.xctest */,
+				038E04AE20458A1600D59309 /* AVOSCloudIMGroupChat.framework */,
+				038E04B020458A1600D59309 /* AVOSCloudLiveQuery.framework */,
+				038E04B220458A1600D59309 /* AVOSCloudLiveQuery-iOSTests.xctest */,
+				038E04B420458A1600D59309 /* AVOSCloudLiveQuery.framework */,
+				038E04B620458A1600D59309 /* AVOSCloudLiveQuery-macOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		038E04D62045A7FA00D59309 /* HappyDNS */ = {
+			isa = PBXGroup;
+			children = (
+				038E04D72045A7FA00D59309 /* Assessment */,
+				038E04DC2045A7FA00D59309 /* Common */,
+				038E04E82045A7FA00D59309 /* HappyDNS.h */,
+				038E04E92045A7FA00D59309 /* Http */,
+				038E04EE2045A7FA00D59309 /* Local */,
+				038E04F92045A7FA00D59309 /* QNRefresher.h */,
+				038E04FA2045A7FA00D59309 /* QNRefresher.m */,
+				038E04FB2045A7FA00D59309 /* Util */,
+			);
+			name = HappyDNS;
+			path = Librarys/HappyDNS;
+			sourceTree = "<group>";
+		};
+		038E04D72045A7FA00D59309 /* Assessment */ = {
+			isa = PBXGroup;
+			children = (
+				038E04D82045A7FA00D59309 /* QNAssessment.h */,
+				038E04D92045A7FA00D59309 /* QNAssessment.m */,
+				038E04DA2045A7FA00D59309 /* QNIpModel.h */,
+				038E04DB2045A7FA00D59309 /* QNIpModel.m */,
+			);
+			path = Assessment;
+			sourceTree = "<group>";
+		};
+		038E04DC2045A7FA00D59309 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				038E04DD2045A7FA00D59309 /* QNDnsManager.h */,
+				038E04DE2045A7FA00D59309 /* QNDnsManager.m */,
+				038E04DF2045A7FA00D59309 /* QNDomain.h */,
+				038E04E02045A7FA00D59309 /* QNDomain.m */,
+				038E04E12045A7FA00D59309 /* QNLruCache.h */,
+				038E04E22045A7FA00D59309 /* QNLruCache.m */,
+				038E04E32045A7FA00D59309 /* QNNetworkInfo.h */,
+				038E04E42045A7FA00D59309 /* QNNetworkInfo.m */,
+				038E04E52045A7FA00D59309 /* QNRecord.h */,
+				038E04E62045A7FA00D59309 /* QNRecord.m */,
+				038E04E72045A7FA00D59309 /* QNResolverDelegate.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		038E04E92045A7FA00D59309 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				038E04EA2045A7FA00D59309 /* QNDnspodEnterprise.h */,
+				038E04EB2045A7FA00D59309 /* QNDnspodEnterprise.m */,
+				038E04EC2045A7FA00D59309 /* QNDnspodFree.h */,
+				038E04ED2045A7FA00D59309 /* QNDnspodFree.m */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		038E04EE2045A7FA00D59309 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				038E04EF2045A7FA00D59309 /* QNHijackingDetectWrapper.h */,
+				038E04F02045A7FA00D59309 /* QNHijackingDetectWrapper.m */,
+				038E04F12045A7FA00D59309 /* QNHosts.h */,
+				038E04F22045A7FA00D59309 /* QNHosts.m */,
+				038E04F32045A7FA00D59309 /* QNResolver.h */,
+				038E04F42045A7FA00D59309 /* QNResolver.m */,
+				038E04F52045A7FA00D59309 /* QNResolvUtil.h */,
+				038E04F62045A7FA00D59309 /* QNResolvUtil.m */,
+				038E04F72045A7FA00D59309 /* QNTxtResolver.h */,
+				038E04F82045A7FA00D59309 /* QNTxtResolver.m */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		038E04FB2045A7FA00D59309 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				038E04FC2045A7FA00D59309 /* QNDes.h */,
+				038E04FD2045A7FA00D59309 /* QNDes.m */,
+				038E04FE2045A7FA00D59309 /* QNGetAddrInfo.h */,
+				038E04FF2045A7FA00D59309 /* QNGetAddrInfo.m */,
+				038E05002045A7FA00D59309 /* QNHex.h */,
+				038E05012045A7FA00D59309 /* QNHex.m */,
+				038E05022045A7FA00D59309 /* QNIP.h */,
+				038E05032045A7FA00D59309 /* QNIP.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		038E03CD204459A000D59309 /* live_demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 038E03E4204459A000D59309 /* Build configuration list for PBXNativeTarget "live_demo" */;
+			buildPhases = (
+				038E03CA204459A000D59309 /* Sources */,
+				038E03CB204459A000D59309 /* Frameworks */,
+				038E03CC204459A000D59309 /* Resources */,
+				038E047C204509F300D59309 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				038E04BA20458A2900D59309 /* PBXTargetDependency */,
+			);
+			name = live_demo;
+			productName = live_demo;
+			productReference = 038E03CE204459A000D59309 /* live_demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		038E03C6204459A000D59309 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = example;
+				TargetAttributes = {
+					038E03CD204459A000D59309 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 038E03C9204459A000D59309 /* Build configuration list for PBXProject "live_demo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 038E03C5204459A000D59309;
+			productRefGroup = 038E03CF204459A000D59309 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 038E048820458A1500D59309 /* Products */;
+					ProjectRef = 038E048720458A1500D59309 /* AVOS.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				038E03CD204459A000D59309 /* live_demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		038E049A20458A1600D59309 /* AVOSCloud.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloud.framework;
+			remoteRef = 038E049920458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E049C20458A1600D59309 /* AVOSCloud-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AVOSCloud-iOSTests.xctest";
+			remoteRef = 038E049B20458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E049E20458A1600D59309 /* AVOSCloud.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloud.framework;
+			remoteRef = 038E049D20458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E04A020458A1600D59309 /* AVOSCloud-macOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AVOSCloud-macOSTests.xctest";
+			remoteRef = 038E049F20458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E04A220458A1600D59309 /* AVOSCloud.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloud.framework;
+			remoteRef = 038E04A120458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E04A420458A1600D59309 /* AVOSCloud.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloud.framework;
+			remoteRef = 038E04A320458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E04A620458A1600D59309 /* AVOSCloudIM.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloudIM.framework;
+			remoteRef = 038E04A520458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E04A820458A1600D59309 /* AVOSCloudIM-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AVOSCloudIM-iOSTests.xctest";
+			remoteRef = 038E04A720458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E04AA20458A1600D59309 /* AVOSCloudIM.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloudIM.framework;
+			remoteRef = 038E04A920458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E04AC20458A1600D59309 /* AVOSCloudIM-macOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AVOSCloudIM-macOSTests.xctest";
+			remoteRef = 038E04AB20458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E04AE20458A1600D59309 /* AVOSCloudIMGroupChat.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloudIMGroupChat.framework;
+			remoteRef = 038E04AD20458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E04B020458A1600D59309 /* AVOSCloudLiveQuery.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloudLiveQuery.framework;
+			remoteRef = 038E04AF20458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E04B220458A1600D59309 /* AVOSCloudLiveQuery-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AVOSCloudLiveQuery-iOSTests.xctest";
+			remoteRef = 038E04B120458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E04B420458A1600D59309 /* AVOSCloudLiveQuery.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AVOSCloudLiveQuery.framework;
+			remoteRef = 038E04B320458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		038E04B620458A1600D59309 /* AVOSCloudLiveQuery-macOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AVOSCloudLiveQuery-macOSTests.xctest";
+			remoteRef = 038E04B520458A1600D59309 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		038E03CC204459A000D59309 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				038E03DE204459A000D59309 /* LaunchScreen.storyboard in Resources */,
+				038E03DB204459A000D59309 /* Assets.xcassets in Resources */,
+				038E03D9204459A000D59309 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		038E03CA204459A000D59309 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				038E05062045A7FA00D59309 /* QNDnsManager.m in Sources */,
+				038E05122045A7FA00D59309 /* QNRefresher.m in Sources */,
+				038E05102045A7FA00D59309 /* QNResolvUtil.m in Sources */,
+				038E05132045A7FA00D59309 /* QNDes.m in Sources */,
+				038E05052045A7FA00D59309 /* QNIpModel.m in Sources */,
+				038E05152045A7FA00D59309 /* QNHex.m in Sources */,
+				038E050C2045A7FA00D59309 /* QNDnspodFree.m in Sources */,
+				038E05092045A7FA00D59309 /* QNNetworkInfo.m in Sources */,
+				038E050E2045A7FA00D59309 /* QNHosts.m in Sources */,
+				038E03D6204459A000D59309 /* RootViewController.m in Sources */,
+				038E050F2045A7FA00D59309 /* QNResolver.m in Sources */,
+				038E03E1204459A000D59309 /* main.m in Sources */,
+				038E05042045A7FA00D59309 /* QNAssessment.m in Sources */,
+				038E050B2045A7FA00D59309 /* QNDnspodEnterprise.m in Sources */,
+				038E050D2045A7FA00D59309 /* QNHijackingDetectWrapper.m in Sources */,
+				038E05082045A7FA00D59309 /* QNLruCache.m in Sources */,
+				038E03EE20445EAB00D59309 /* PushViewController.m in Sources */,
+				038E05162045A7FA00D59309 /* QNIP.m in Sources */,
+				038E03D3204459A000D59309 /* AppDelegate.m in Sources */,
+				038E05112045A7FA00D59309 /* QNTxtResolver.m in Sources */,
+				038E05142045A7FA00D59309 /* QNGetAddrInfo.m in Sources */,
+				038E03F120445EB400D59309 /* PullViewController.m in Sources */,
+				038E05072045A7FA00D59309 /* QNDomain.m in Sources */,
+				038E050A2045A7FA00D59309 /* QNRecord.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		038E04BA20458A2900D59309 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AVOSCloud-iOS";
+			targetProxy = 038E04B920458A2900D59309 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		038E03D7204459A000D59309 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				038E03D8204459A000D59309 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		038E03DC204459A000D59309 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				038E03DD204459A000D59309 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		038E03E2204459A000D59309 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		038E03E3204459A000D59309 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		038E03E5204459A000D59309 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 87MVER2MH8;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)s",
+				);
+				INFOPLIST_FILE = live_demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mytestapp.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		038E03E6204459A000D59309 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 87MVER2MH8;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)s",
+				);
+				INFOPLIST_FILE = live_demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mytestapp.demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		038E03C9204459A000D59309 /* Build configuration list for PBXProject "live_demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				038E03E2204459A000D59309 /* Debug */,
+				038E03E3204459A000D59309 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		038E03E4204459A000D59309 /* Build configuration list for PBXNativeTarget "live_demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				038E03E5204459A000D59309 /* Debug */,
+				038E03E6204459A000D59309 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 038E03C6204459A000D59309 /* Project object */;
+}
