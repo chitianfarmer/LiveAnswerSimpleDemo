@@ -7,7 +7,7 @@
 
 ## 2 方案架构
 
-![](https://thumbnail0.baidupcs.com/thumbnail/942e4d7c22579c463bd06f8197a0afaf?fid=2505445054-250528-371188459423429&time=1519808400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-6pmxKVgtvghKtJt32brHKTnSugk%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=1361613201116581468&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video.png)
+![](https://github.com/LijieSong/LiveAnswerSimpleDemo/blob/master/img/theFlowChart.png)
 
 ## 3 功能介绍
 
