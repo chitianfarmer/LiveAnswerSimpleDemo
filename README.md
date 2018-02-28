@@ -1,0 +1,2 @@
+# LiveAnswerSimpleDemo
+实现一个简单的在手机上直播推拉流答题功能的demo
