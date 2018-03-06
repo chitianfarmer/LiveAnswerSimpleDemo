@@ -21,7 +21,7 @@
 
 @implementation PushViewController
 {
-    EMChatroom* _chatroom;
+    NSMutableArray* _allUsersArray;
     AVObject* _problem1;
     AVObject* _problem2;
     NSTimer* _timerCheckResult;
@@ -40,6 +40,10 @@
     
     [self setupPushStream];
     [self startStreaming];
+    
+    if (!_allUsersArray) {
+        _allUsersArray = [[NSMutableArray alloc]init];
+    }
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -103,7 +107,7 @@
     }
 }
 - (void)sendProblem:(NSString*)problemId {
-    if (_chatroom.occupantsCount <= 0) {
+    if (!_allUsersArray || _allUsersArray.count <= 0) {
         return;
     }
     if (!_timerCheckResult) {
@@ -113,8 +117,8 @@
     EMCmdMessageBody *body = [[EMCmdMessageBody alloc] initWithAction:problemId];
     NSString *from = [[EMClient sharedClient] currentUsername];
     
-    for (int i=0; i<_chatroom.occupantsCount; i++) {
-        EMMessage *message = [[EMMessage alloc] initWithConversationID:_chatroom.memberList[i] from:from to:_chatroom.memberList[i] body:body ext:nil];
+    for (int i=0; i<_allUsersArray.count; i++) {
+        EMMessage *message = [[EMMessage alloc] initWithConversationID:_allUsersArray[i] from:from to:_allUsersArray[i] body:body ext:nil];
         message.chatType = EMChatTypeChat;
         [[EMClient sharedClient].chatManager sendMessage:message progress:nil completion:^(EMMessage *aMessage, EMError *aError) {
             if (!aError) {
@@ -157,6 +161,24 @@
 }
 
 #pragma mark - easemob
+- (void)updateUsers:(NSString*)cursor {
+    if (!cursor) {
+        [_allUsersArray removeAllObjects];
+    }
+    [[EMClient sharedClient].roomManager getChatroomMemberListFromServerWithId:ANCHOR_ROOM_ID cursor:cursor pageSize:100 completion:^(EMCursorResult *aResult, EMError *aError) {
+        if (!aError) {
+            NSLog(@"获取聊天室成员成功(%ld)", aResult.list.count);
+            if (aResult.list.count > 0) {
+                [_allUsersArray addObjectsFromArray:aResult.list];
+                if (aResult.cursor) {
+                    [self updateUsers:aResult.cursor];
+                }
+            }
+        } else {
+            NSLog(@"获取聊天室成员失败");
+        }
+    }];
+}
 - (void)loginEasemob {
     [[EMClient sharedClient] loginWithUsername:ANCHOR_USERNAME password:ANCHOR_PASSWORD completion:^(NSString *aUsername, EMError *aError) {
         if (!aError) {
@@ -171,15 +193,8 @@
     [[EMClient sharedClient].roomManager addDelegate:self delegateQueue:nil];
     [[EMClient sharedClient].roomManager joinChatroom:ANCHOR_ROOM_ID completion:^(EMChatroom *aChatroom, EMError *aError) {
         if (!aError) {
-            _chatroom = aChatroom;
-            NSLog(@"进入聊天室成功(%ld)", (long)_chatroom.occupantsCount);
-            [[EMClient sharedClient].roomManager getChatroomMemberListFromServerWithId:ANCHOR_ROOM_ID cursor:nil pageSize:100 completion:^(EMCursorResult *aResult, EMError *aError) {
-                if (!aError) {
-                    NSLog(@"获取聊天室成员成功(%ld)", aResult.list.count);
-                } else {
-                    NSLog(@"获取聊天室成员失败");
-                }
-            }];
+            NSLog(@"进入聊天室成功");
+            [self updateUsers:nil];
         } else {
             NSLog(@"进入聊天室失败");
         }
@@ -196,11 +211,15 @@
     }];
 }
 - (void)userDidJoinChatroom:(EMChatroom *)aChatroom user:(NSString *)aUsername {
-    NSLog(@"有人进入聊天室(%ld)", (long)_chatroom.occupantsCount);
+    if (![_allUsersArray containsObject:aUsername]) {
+        [_allUsersArray addObject:aUsername];
+    }
 }
 
 - (void)userDidLeaveChatroom:(EMChatroom *)aChatroom user:(NSString *)aUsername {
-    NSLog(@"进入离开聊天室(%ld)", (long)_chatroom.occupantsCount);
+    if ([_allUsersArray containsObject:aUsername]) {
+        [_allUsersArray removeObject:aUsername];
+    }
 }
 
 #pragma mark - push
@@ -237,13 +256,14 @@
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
+
