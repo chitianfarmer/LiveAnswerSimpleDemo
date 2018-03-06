@@ -1,5 +1,6 @@
 # LiveAnswerSimpleDemo
-实现一个简单的在手机上直播推拉流答题功能的demo
+
+基于环信开发在线直播答题开源项目
 
 ## 1 项目初衷
 
@@ -7,12 +8,14 @@
 
 ## 2 方案架构
 
-![](https://thumbnail0.baidupcs.com/thumbnail/942e4d7c22579c463bd06f8197a0afaf?fid=2505445054-250528-371188459423429&time=1519808400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-6pmxKVgtvghKtJt32brHKTnSugk%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=1361613201116581468&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video.png)
+![](https://github.com/LijieSong/LiveAnswerSimpleDemo/blob/master/img/theFlowChart.png)
 
 ## 3 功能介绍
 
 demo使用了环信IM SDK和七牛云的直播SDK以及leancloud，环信用来创建聊天室分为主播和观众，观众加入聊天室观看直播，通过IM下发答题指令观众抽取题目开始答题。七牛云用来直播推拉流。leancloud后台操作，用来下发题目和上传统计数据。
-百万英雄、芝士超人这些都是用PC进行推流的，然后手机客户端拉流播放。此demo只是做的一个简版，直接使用手机进行推拉流。代码逻辑可以参考方案架构的图，在此基础上做了一个简版，实现了手机直播和手机答题。
+百万英雄、芝士超人这些都是用PC进行推流的，然后手机客户端拉流播放。此demo只是做的一个简版，直接使用手机进行推拉流。代码逻辑可以参考方案架构的图，在此基础上做了一个简版，实现了手机直播和手机答题。       效果图来一张
+
+![](https://github.com/LijieSong/LiveAnswerSimpleDemo/blob/master/img/screenhot.jpg)
 
 ### 注意
 
