@@ -18,19 +18,7 @@
 #define AUDIENCE_USERNAME @"audience_name1"
 #define AUDIENCE_PASSWORD @"audience_password"
 
-// 预设测试问题
 #define PROBLEM_ANSWER_KEY_A @"A"
 #define PROBLEM_ANSWER_KEY_B @"B"
-
-#define PROBLEM_KEY_1 @"1"
-#define PROBLEM_TITLE_1 @"这是问题一的标题?"
-#define PROBLEM_ANSWER_1_A @"这是问题一的答案A"
-#define PROBLEM_ANSWER_1_B @"这是问题一的答案B"
-
-#define PROBLEM_KEY_2 @"2"
-#define PROBLEM_TITLE_2 @"这是问题二的标题?"
-#define PROBLEM_ANSWER_2_A @"这是问题二的答案A"
-#define PROBLEM_ANSWER_2_B @"这是问题二的答案B"
-
 
 #endif /* Preset_h */

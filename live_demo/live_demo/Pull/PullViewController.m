@@ -21,6 +21,7 @@
 @implementation PullViewController
 {
     AVObject* _problem;
+    NSInteger _answerIndex;
 }
 
 - (void)viewDidLoad {
@@ -45,17 +46,17 @@
 }
 
 #pragma mark - problem
-- (IBAction)ClickAnswer1:(id)sender {
-    self.ViewProblem.hidden = true;
+- (IBAction)ClickAnswer1:(UIButton *)sender {
     [self updateProblemResult:PROBLEM_ANSWER_KEY_A];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(delayAction) userInfo:nil repeats:NO];
 }
-- (IBAction)ClickAnswer2:(id)sender {
-    self.ViewProblem.hidden = true;
+- (IBAction)ClickAnswer2:(UIButton *)sender {
     [self updateProblemResult:PROBLEM_ANSWER_KEY_B];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(delayAction) userInfo:nil repeats:NO];
 }
 - (void)updateProblemResult:(NSString*)answerKey {
     AVQuery *problemQuery = [AVQuery queryWithClassName:PROBLEMRESULT_TABLE_NAME];
-    [problemQuery whereKey:PROBLEMRESULT_PROBLEM_COL_NAME equalTo:_problem];
+    [problemQuery whereKey:PROBLEMRESULT_PROBLEM_COL_NAME equalTo:[_problem objectForKey:PROBLEMLIST_SERIALNUMBER_NAME]];
     AVQuery *answerQuery = [AVQuery queryWithClassName:PROBLEMRESULT_TABLE_NAME];
     [answerQuery whereKey:PROBLEMRESULT_ANSWERKEY_COL_NAME equalTo:answerKey];
     AVQuery *query = [AVQuery andQueryWithSubqueries:[NSArray arrayWithObjects:problemQuery,answerQuery,nil]];
@@ -72,39 +73,53 @@
     }];
 }
 
-- (void)showProblem:(NSString*)problemKey {
-    if ([problemKey isEqualToString:PROBLEM_KEY_1]) {
-        self.LabTitle.text = PROBLEM_TITLE_1;
-        [self.ButtonAnswer1 setTitle:PROBLEM_ANSWER_1_A forState:UIControlStateNormal];
-        [self.ButtonAnswer2 setTitle:PROBLEM_ANSWER_1_B forState:UIControlStateNormal];
-    } else if ([problemKey isEqualToString:PROBLEM_KEY_2]) {
-        self.LabTitle.text = PROBLEM_TITLE_2;
-        [self.ButtonAnswer1 setTitle:PROBLEM_ANSWER_2_A forState:UIControlStateNormal];
-        [self.ButtonAnswer2 setTitle:PROBLEM_ANSWER_2_B forState:UIControlStateNormal];
-    } else {
-        NSLog(@"未知的问题KEY");
-        return;
+- (void)selectAndShowProblem{
+    NSString *title = [_problem objectForKey:PROBLEMLIST_PROBLEMTITLE_NAME];
+    NSArray *proArr = [_problem objectForKey:PROBLEMLIST_PROBLEANSWER_NAME];
+    _titleLab.text = title;
+    [_answer1Btn setTitle:[proArr firstObject] forState:UIControlStateNormal];
+    [_answer2Btn setTitle:[proArr lastObject] forState:UIControlStateNormal];
+    
+    self.problemView.hidden = false;
+}
+
+- (void)showProblemAnswer{
+    NSNumber *trueAnswer = [_problem objectForKey:PROBLEMLIST_TUREANSWER_NAME];
+    if ([trueAnswer integerValue] == 1) {
+        [_answer1Btn setBackgroundColor:[UIColor greenColor]];
+    }else{
+        [_answer2Btn setBackgroundColor:[UIColor greenColor]];
     }
-    self.ViewProblem.hidden = false;
+    self.problemView.hidden = false;
+    
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(delayAction) userInfo:nil repeats:NO];
 }
-- (void)selectAndShowProblem:(NSString*)problemId {
-    AVQuery *query = [AVQuery queryWithClassName:ANCHORPROBLEM_TABLE_NAME];
-    [query getObjectInBackgroundWithId:problemId block:^(AVObject *object, NSError *error) {
-        if (!error) {
-            _problem = object;
-            NSString* problemKey = [object objectForKey:ANCHORPROBLEM_KEY_COL_NAME];
-            [self showProblem:problemKey];
-        } else {
-            NSLog(@"获取问题失败");
-        }
-    }];
-}
+
 - (void)cmdMessagesDidReceive:(NSArray *)aCmdMessages {
-    NSLog(@"收到CMD消息");
     for (EMMessage *message in aCmdMessages) {
+        NSString *type = [message.ext objectForKey:@"type"];
         EMCmdMessageBody *body = (EMCmdMessageBody *)message.body;
-        [self selectAndShowProblem:body.action];
+        AVQuery *query = [AVQuery queryWithClassName:PROBLEMLIST_TABLE_NAME];
+        [query getObjectInBackgroundWithId:body.action block:^(AVObject *object, NSError *error) {
+            if (!error) {
+                _problem = object;
+                if ([type isEqualToString:@"question"]) {
+                    [self selectAndShowProblem];
+                }else{
+                    [self showProblemAnswer];
+                }
+            } else {
+                NSLog(@"获取问题失败");
+            }
+        }];
+        
     }
+}
+
+- (void)delayAction{
+    [_answer1Btn setBackgroundColor:[UIColor clearColor]];
+    [_answer2Btn setBackgroundColor:[UIColor clearColor]];
+    self.problemView.hidden = true;
 }
 
 #pragma mark - easemob
@@ -151,7 +166,7 @@
         self.player.delegate = self;
         self.player.delegateQueue = dispatch_get_main_queue();
         self.player.backgroundPlayEnable = true;
-        [self.ViewVideo addSubview:self.player.playerView];
+        [self.videoView addSubview:self.player.playerView];
     }
 }
 

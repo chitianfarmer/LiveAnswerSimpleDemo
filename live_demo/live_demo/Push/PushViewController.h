@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface PushViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *LabResult1;
-@property (weak, nonatomic) IBOutlet UILabel *LabResult2;
-@property (weak, nonatomic) IBOutlet UIView *ViewVideo;
+@property (weak, nonatomic) IBOutlet UILabel *resultLab;
+@property (weak, nonatomic) IBOutlet UIView *videoView;
+@property (strong, nonatomic) IBOutlet UIButton *questionBtn;
+@property (strong, nonatomic) IBOutlet UIButton *answerBtn;
 
 @end

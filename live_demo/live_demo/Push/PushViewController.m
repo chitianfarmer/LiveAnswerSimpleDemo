@@ -22,20 +22,17 @@
 @implementation PushViewController
 {
     NSMutableArray* _allUsersArray;
-    AVObject* _problem1;
-    AVObject* _problem2;
-    NSTimer* _timerCheckResult;
+    AVObject* _problem;
+    EMChatroom *_chatRoom;
+    NSInteger _problemIndex;
     
-    
-    int problem_1_A;
-    int problem_1_B;
-    int problem_2_A;
-    int problem_2_B;
+    int problem_A;
+    int problem_B;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _problemIndex = 0;
     [self loginEasemob];
     
     [self setupPushStream];
@@ -49,9 +46,6 @@
     [super viewWillDisappear:animated];
     
     [self leaveChatRoom];
-    if (_timerCheckResult) {
-        [_timerCheckResult invalidate];
-    }
     [self stopStreaming];
     [self.session.previewView removeFromSuperview];
     [self.session destroy];
@@ -63,62 +57,40 @@
 }
 
 #pragma mark - problem
-- (void)updateResultUI:(NSString*)problemKey answerKey:(NSString*)answerKey answerCount:(int)answerCount {
-    if ([problemKey isEqualToString:PROBLEM_KEY_1]) {
-        if ([answerKey isEqualToString:PROBLEM_ANSWER_KEY_A]) {
-            problem_1_A = answerCount;
-        } else if ([answerKey isEqualToString:PROBLEM_ANSWER_KEY_B]) {
-            problem_1_B = answerCount;
-        }
-        self.LabResult1.text = [NSString stringWithFormat:@"统计:A(%d) B(%d)", problem_1_A,problem_1_B];
-    } else if ([problemKey isEqualToString:PROBLEM_KEY_2]) {
-        if ([answerKey isEqualToString:PROBLEM_ANSWER_KEY_A]) {
-            problem_2_A = answerCount;
-        } else if ([answerKey isEqualToString:PROBLEM_ANSWER_KEY_B]) {
-            problem_2_B = answerCount;
-        }
-        self.LabResult2.text = [NSString stringWithFormat:@"统计:A(%d) B(%d)", problem_2_A,problem_2_B];
-    } else {
-        NSLog(@"未知的问题KEY");
-        return;
+- (void)updateResultUIWithAnswerKey:(NSString*)answerKey answerCount:(int)answerCount {
+    if ([answerKey isEqualToString:PROBLEM_ANSWER_KEY_A]) {
+        problem_A = answerCount;
+    } else if ([answerKey isEqualToString:PROBLEM_ANSWER_KEY_B]) {
+        problem_B = answerCount;
     }
+    self.resultLab.text = [NSString stringWithFormat:@"统计:A(%d) B(%d)", problem_A,problem_B];
 }
-- (void)checkReuslt2:(NSString*)problemObjId problemKey:(NSString*)problemKey{
+- (void)checkReuslt:(NSNumber*)problemKey{
     AVQuery *query = [AVQuery queryWithClassName:PROBLEMRESULT_TABLE_NAME];
-    [query whereKey:PROBLEMRESULT_PROBLEM_COL_NAME equalTo:[AVObject objectWithClassName:ANCHORPROBLEM_TABLE_NAME objectId:problemObjId]];
+    [query whereKey:PROBLEMRESULT_PROBLEM_COL_NAME equalTo:problemKey];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (AVObject *result in objects) {
                 NSString* answerKey = [result objectForKey:PROBLEMRESULT_ANSWERKEY_COL_NAME];
                 NSNumber* answerCount = [result objectForKey:PROBLEMRESULT_ANSWERCOUNTKEY_COL_NAME];
-                [self updateResultUI:problemKey answerKey:answerKey answerCount:answerCount.intValue];
+                [self updateResultUIWithAnswerKey:answerKey answerCount:answerCount.intValue];
             }
         } else {
             NSLog(@"查询问题反馈失败S");
         }
     }];
 }
-- (void)checkResult:(NSTimer *)timer {
-    if (_problem1) {
-        [self checkReuslt2:_problem1.objectId problemKey:PROBLEM_KEY_1];
-    }
-    if (_problem2) {
-        [self checkReuslt2:_problem2.objectId problemKey:PROBLEM_KEY_2];
-    }
-}
-- (void)sendProblem:(NSString*)problemId {
+
+- (void)sendProblem:(NSString*)problemId type:(NSString *)type{
     if (!_allUsersArray || _allUsersArray.count <= 0) {
         return;
-    }
-    if (!_timerCheckResult) {
-        _timerCheckResult = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(checkResult:) userInfo:nil repeats:YES];
     }
     
     EMCmdMessageBody *body = [[EMCmdMessageBody alloc] initWithAction:problemId];
     NSString *from = [[EMClient sharedClient] currentUsername];
     
     for (int i=0; i<_allUsersArray.count; i++) {
-        EMMessage *message = [[EMMessage alloc] initWithConversationID:_allUsersArray[i] from:from to:_allUsersArray[i] body:body ext:nil];
+        EMMessage *message = [[EMMessage alloc] initWithConversationID:ANCHOR_ROOM_ID from:from to:_chatRoom.chatroomId body:body ext:@{@"type":type}];
         message.chatType = EMChatTypeChat;
         [[EMClient sharedClient].chatManager sendMessage:message progress:nil completion:^(EMMessage *aMessage, EMError *aError) {
             if (!aError) {
@@ -129,17 +101,17 @@
         }];
     }
 }
-- (void)createProblemResult:(AVObject*) problem answerKey:(NSString*)answerKey {
+- (void)createProblemResult:(AVObject*)problem answerKey:(NSString*)answerKey {
     AVObject *problemResult = [[AVObject alloc] initWithClassName:PROBLEMRESULT_TABLE_NAME];
-    [problemResult setObject:problem forKey:PROBLEMRESULT_PROBLEM_COL_NAME];
+    [problemResult setObject:[problem objectForKey:PROBLEMLIST_SERIALNUMBER_NAME] forKey:PROBLEMRESULT_PROBLEM_COL_NAME];
     [problemResult setObject:answerKey forKey:PROBLEMRESULT_ANSWERKEY_COL_NAME];
     [problemResult setObject:@0 forKey:PROBLEMRESULT_ANSWERCOUNTKEY_COL_NAME];
     [problemResult saveInBackground];
 }
-- (AVObject*)createProblem:(NSString*)problemKey {
-    AVObject* problem = [AVObject objectWithClassName:ANCHORPROBLEM_TABLE_NAME];
-    [problem setObject:problemKey forKey:ANCHORPROBLEM_KEY_COL_NAME];
-    [problem save];
+- (AVObject*)findProblem:(NSNumber *)problemKey {
+    AVQuery *query = [AVQuery queryWithClassName:PROBLEMLIST_TABLE_NAME];
+    [query whereKey:PROBLEMLIST_SERIALNUMBER_NAME equalTo:problemKey];
+    AVObject* problem = [query getFirstObject];
     
     // 新增答案统计记录
     [self createProblemResult:problem answerKey:PROBLEM_ANSWER_KEY_A];
@@ -147,17 +119,33 @@
     
     return problem;
 }
-- (IBAction)Send1:(id)sender {
-    if (!_problem1) {
-        _problem1 = [self createProblem:PROBLEM_KEY_1];
+- (IBAction)sendQusetion:(id)sender {
+    if (_problemIndex == 0) {
+        _problemIndex = 1;
+    }else if (_problemIndex >= 12){
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"题目已全部答完" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil, nil];
+        [alertView show];
+        return;
+    }else{
+        _problemIndex++;
     }
-    [self sendProblem:_problem1.objectId];
+    
+    [_questionBtn setTitle:[NSString stringWithFormat:@"发布问题(%ld)",(long)_problemIndex] forState:UIControlStateNormal];
+    _resultLab.text = @"统计:A(0) B(0)";
+    
+    if (!_problem) {
+        _problem = [self findProblem:[NSNumber numberWithInteger:_problemIndex]];
+    }
+    [self sendProblem:_problem.objectId type:@"question"];
 }
-- (IBAction)Send2:(id)sender {
-    if (!_problem2) {
-        _problem1 = [self createProblem:PROBLEM_KEY_2];
+- (IBAction)announceAnswer:(id)sender {
+    
+    if (_problemIndex == 0 || _problemIndex >= 12) {
+        return;
     }
-    [self sendProblem:_problem2.objectId];
+    [_answerBtn setTitle:[NSString stringWithFormat:@"公布答案(%ld)",(long)_problemIndex] forState:UIControlStateNormal];
+    [self checkReuslt:[NSNumber numberWithInteger:_problemIndex]];
+    [self sendProblem:_problem.objectId type:@"answer"];
 }
 
 #pragma mark - easemob
@@ -193,6 +181,7 @@
     [[EMClient sharedClient].roomManager addDelegate:self delegateQueue:nil];
     [[EMClient sharedClient].roomManager joinChatroom:ANCHOR_ROOM_ID completion:^(EMChatroom *aChatroom, EMError *aError) {
         if (!aError) {
+            _chatRoom = [EMChatroom chatroomWithId:aChatroom.chatroomId];
             NSLog(@"进入聊天室成功");
             [self updateUsers:nil];
         } else {
@@ -232,7 +221,7 @@
         videoCaptureConfiguration.position = AVCaptureDevicePositionFront;
         self.session = [[PLMediaStreamingSession alloc] initWithVideoCaptureConfiguration:videoCaptureConfiguration audioCaptureConfiguration:audioCaptureConfiguration videoStreamingConfiguration:videoStreamingConfiguration audioStreamingConfiguration:audioStreamingConfiguration stream:nil];
         
-        [self.ViewVideo addSubview:self.session.previewView];
+        [self.videoView addSubview:self.session.previewView];
     }
 }
 - (void)startStreaming {
@@ -256,14 +245,13 @@
 
 
 /*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end
-

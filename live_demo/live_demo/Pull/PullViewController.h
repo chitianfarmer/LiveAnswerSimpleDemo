@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface PullViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *ViewProblem;
-@property (weak, nonatomic) IBOutlet UILabel *LabTitle;
-@property (weak, nonatomic) IBOutlet UIButton *ButtonAnswer1;
-@property (weak, nonatomic) IBOutlet UIButton *ButtonAnswer2;
-@property (weak, nonatomic) IBOutlet UIView *ViewVideo;
+@property (weak, nonatomic) IBOutlet UIView *problemView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLab;
+@property (weak, nonatomic) IBOutlet UIButton *answer1Btn;
+@property (weak, nonatomic) IBOutlet UIButton *answer2Btn;
+@property (weak, nonatomic) IBOutlet UIView *videoView;
 
 @end

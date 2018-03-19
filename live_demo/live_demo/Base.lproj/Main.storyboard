@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uoy-TG-FXD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uoy-TG-FXD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -77,7 +77,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebh-hi-jML">
-                                <rect key="frame" x="0.0" y="570" width="375" height="97"/>
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBf-LN-pjd">
                                         <rect key="frame" x="8" y="8" width="97" height="37"/>
@@ -89,26 +89,11 @@
                                             <constraint firstAttribute="height" constant="37" id="zhk-73-Byk"/>
                                         </constraints>
                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="发布问题一">
+                                        <state key="normal" title="发布问题">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="Send1:" destination="5kv-DI-5d3" eventType="touchUpInside" id="kmj-ZG-eRZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3j-Qr-JAj">
-                                        <rect key="frame" x="8" y="52" width="97" height="37"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="37" id="2LN-EE-0aM"/>
-                                            <constraint firstAttribute="width" constant="97" id="G9y-3y-4rI"/>
-                                        </constraints>
-                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="发布问题二">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="Send2:" destination="5kv-DI-5d3" eventType="touchUpInside" id="hfl-Q8-5nS"/>
+                                            <action selector="sendQusetion:" destination="5kv-DI-5d3" eventType="touchUpInside" id="A1x-Tf-ilY"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="统计:A(0) B(0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOM-VH-w6Q">
@@ -122,25 +107,28 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="统计:A(0) B(0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSW-DA-zQL">
-                                        <rect key="frame" x="256" y="61" width="111" height="21"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiu-5K-n2Z">
+                                        <rect key="frame" x="139" y="8" width="97" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <state key="normal" title="公布答案">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="announceAnswer:" destination="5kv-DI-5d3" eventType="touchUpInside" id="C85-As-R9j"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="cOM-VH-w6Q" firstAttribute="top" secondItem="ebh-hi-jML" secondAttribute="top" constant="16" id="0fk-Md-MTc"/>
-                                    <constraint firstItem="YSW-DA-zQL" firstAttribute="top" secondItem="cOM-VH-w6Q" secondAttribute="bottom" constant="24" id="BkZ-rO-ug7"/>
+                                    <constraint firstItem="fiu-5K-n2Z" firstAttribute="width" secondItem="cBf-LN-pjd" secondAttribute="width" id="454-2h-O3d"/>
+                                    <constraint firstItem="fiu-5K-n2Z" firstAttribute="height" secondItem="cBf-LN-pjd" secondAttribute="height" id="EZG-pT-QhL"/>
                                     <constraint firstItem="cBf-LN-pjd" firstAttribute="leading" secondItem="ebh-hi-jML" secondAttribute="leading" constant="8" id="N2d-ei-jMn"/>
-                                    <constraint firstItem="V3j-Qr-JAj" firstAttribute="leading" secondItem="ebh-hi-jML" secondAttribute="leading" constant="8" id="YID-a2-sU9"/>
-                                    <constraint firstAttribute="bottom" secondItem="V3j-Qr-JAj" secondAttribute="bottom" constant="8" id="abg-gF-jNS"/>
+                                    <constraint firstItem="fiu-5K-n2Z" firstAttribute="top" secondItem="ebh-hi-jML" secondAttribute="top" constant="8" id="SO5-3O-0XV"/>
                                     <constraint firstAttribute="trailing" secondItem="cOM-VH-w6Q" secondAttribute="trailing" constant="8" id="dCb-1M-2fa"/>
-                                    <constraint firstItem="YSW-DA-zQL" firstAttribute="leading" secondItem="cOM-VH-w6Q" secondAttribute="leading" id="j4I-AN-7pb"/>
+                                    <constraint firstItem="fiu-5K-n2Z" firstAttribute="centerX" secondItem="ebh-hi-jML" secondAttribute="centerX" id="elY-sg-3aJ"/>
                                     <constraint firstItem="cBf-LN-pjd" firstAttribute="top" secondItem="ebh-hi-jML" secondAttribute="top" constant="8" id="jDj-M9-5ws"/>
-                                    <constraint firstAttribute="height" constant="97" id="sCl-SK-XVw"/>
+                                    <constraint firstAttribute="height" constant="60" id="sCl-SK-XVw"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -157,9 +145,10 @@
                         <viewLayoutGuide key="safeArea" id="vN0-f3-oXc"/>
                     </view>
                     <connections>
-                        <outlet property="LabResult1" destination="cOM-VH-w6Q" id="JjH-nG-Iz8"/>
-                        <outlet property="LabResult2" destination="YSW-DA-zQL" id="cRR-fm-yaz"/>
-                        <outlet property="ViewVideo" destination="t1a-pR-YWu" id="a5t-GA-7Ht"/>
+                        <outlet property="answerBtn" destination="fiu-5K-n2Z" id="8tr-KY-cgv"/>
+                        <outlet property="questionBtn" destination="cBf-LN-pjd" id="LWp-YM-Fk1"/>
+                        <outlet property="resultLab" destination="cOM-VH-w6Q" id="jce-5E-704"/>
+                        <outlet property="videoView" destination="t1a-pR-YWu" id="WBJ-19-KSx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCb-fd-yfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,11 +219,11 @@
                         <viewLayoutGuide key="safeArea" id="kmb-V6-xsO"/>
                     </view>
                     <connections>
-                        <outlet property="ButtonAnswer1" destination="BG2-fX-bGr" id="9Bu-qL-dwQ"/>
-                        <outlet property="ButtonAnswer2" destination="gOk-hw-HeC" id="M7Y-QA-noc"/>
-                        <outlet property="LabTitle" destination="gdT-MN-ux4" id="6gC-gw-wav"/>
-                        <outlet property="ViewProblem" destination="w0d-d7-KCo" id="ATs-Zf-dXo"/>
-                        <outlet property="ViewVideo" destination="1hC-AW-Un5" id="3V2-25-Gpg"/>
+                        <outlet property="answer1Btn" destination="BG2-fX-bGr" id="x2r-Nf-uFk"/>
+                        <outlet property="answer2Btn" destination="gOk-hw-HeC" id="vcG-ec-Cse"/>
+                        <outlet property="problemView" destination="w0d-d7-KCo" id="6HQ-vy-d8F"/>
+                        <outlet property="titleLab" destination="gdT-MN-ux4" id="pVj-SI-TEP"/>
+                        <outlet property="videoView" destination="1hC-AW-Un5" id="Zzy-dG-J7r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMI-0G-NrK" userLabel="First Responder" sceneMemberID="firstResponder"/>
