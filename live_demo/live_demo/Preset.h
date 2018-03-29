@@ -10,13 +10,13 @@
 #define Preset_h
 
 // 主播环信聊天室ID
-#define ANCHOR_ROOM_ID @"42273063632897"
+#define ANCHOR_ROOM_ID @"44843647696897"
 // 主播环信账号
-#define ANCHOR_USERNAME @"anchor_name1"
-#define ANCHOR_PASSWORD @"anchor_password"
+#define ANCHOR_USERNAME @"hx001"
+#define ANCHOR_PASSWORD @"666"
 // 观众环信账号
-#define AUDIENCE_USERNAME @"audience_name1"
-#define AUDIENCE_PASSWORD @"audience_password"
+#define AUDIENCE_USERNAME @"hx666"
+#define AUDIENCE_PASSWORD @"666"
 
 #define PROBLEM_ANSWER_KEY_A @"A"
 #define PROBLEM_ANSWER_KEY_B @"B"

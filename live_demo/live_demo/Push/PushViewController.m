@@ -82,16 +82,17 @@
 }
 
 - (void)sendProblem:(NSString*)problemId type:(NSString *)type{
-    if (!_allUsersArray || _allUsersArray.count <= 0) {
-        return;
-    }
+//    [self updateUsers:nil];
+//    if (!_allUsersArray || _allUsersArray.count <= 0) {
+//        return;
+//    }
     
     EMCmdMessageBody *body = [[EMCmdMessageBody alloc] initWithAction:problemId];
     NSString *from = [[EMClient sharedClient] currentUsername];
     
     for (int i=0; i<_allUsersArray.count; i++) {
         EMMessage *message = [[EMMessage alloc] initWithConversationID:ANCHOR_ROOM_ID from:from to:_chatRoom.chatroomId body:body ext:@{@"type":type}];
-        message.chatType = EMChatTypeChat;
+        message.chatType = EMChatTypeChatRoom;
         [[EMClient sharedClient].chatManager sendMessage:message progress:nil completion:^(EMMessage *aMessage, EMError *aError) {
             if (!aError) {
                 NSLog(@"CMD消息发送成功");
@@ -133,14 +134,12 @@
     [_questionBtn setTitle:[NSString stringWithFormat:@"发布问题(%ld)",(long)_problemIndex] forState:UIControlStateNormal];
     _resultLab.text = @"统计:A(0) B(0)";
     
-    if (!_problem) {
-        _problem = [self findProblem:[NSNumber numberWithInteger:_problemIndex]];
-    }
+    _problem = [self findProblem:[NSNumber numberWithInteger:_problemIndex]];
     [self sendProblem:_problem.objectId type:@"question"];
 }
 - (IBAction)announceAnswer:(id)sender {
     
-    if (_problemIndex == 0 || _problemIndex >= 12) {
+    if (_problemIndex == 0 || _problemIndex > 12) {
         return;
     }
     [_answerBtn setTitle:[NSString stringWithFormat:@"公布答案(%ld)",(long)_problemIndex] forState:UIControlStateNormal];

@@ -76,6 +76,7 @@
 - (void)selectAndShowProblem{
     NSString *title = [_problem objectForKey:PROBLEMLIST_PROBLEMTITLE_NAME];
     NSArray *proArr = [_problem objectForKey:PROBLEMLIST_PROBLEANSWER_NAME];
+
     _titleLab.text = title;
     [_answer1Btn setTitle:[proArr firstObject] forState:UIControlStateNormal];
     [_answer2Btn setTitle:[proArr lastObject] forState:UIControlStateNormal];
@@ -84,7 +85,7 @@
 }
 
 - (void)showProblemAnswer{
-    NSNumber *trueAnswer = [_problem objectForKey:PROBLEMLIST_TUREANSWER_NAME];
+    NSString *trueAnswer = [NSString stringWithFormat:@"%@",[_problem objectForKey:PROBLEMLIST_TUREANSWER_NAME]];
     if ([trueAnswer integerValue] == 1) {
         [_answer1Btn setBackgroundColor:[UIColor greenColor]];
     }else{
@@ -135,7 +136,7 @@
 }
 - (void)enterChatRoom {
     [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
-    //[[EMClient sharedClient].roomManager addDelegate:self delegateQueue:nil];
+    [[EMClient sharedClient].roomManager addDelegate:self delegateQueue:nil];
     [[EMClient sharedClient].roomManager joinChatroom:ANCHOR_ROOM_ID completion:^(EMChatroom *aChatroom, EMError *aError) {
         if (!aError) {
             NSLog(@"进入聊天室成功");
